@@ -13,3 +13,5 @@
 	merge = refs/heads/master
 [branch "main"]
 	vscode-merge-base = origin/master
+	remote = origin
+	merge = refs/heads/main
