@@ -12,3 +12,8 @@ for car in cars: #확장형 for 문
     print(car)
     print(f'My car is a {car}.')
 print("리스트 출력 완료")
+
+for car2 in cars:
+    print('my car \n')
+    for c2 in cars:
+        print()
