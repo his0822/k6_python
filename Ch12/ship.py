@@ -5,7 +5,7 @@ pygame.init()
 screen = pygame.display.set_mode((1280,720))
 clock = pygame.time.Clock()
 
-image = pygame.image.load('./images/ship.bmp')
+image = pygame.image.load('./Ch12/images/ship.bmp')
 rect = image.get_rect()
 
 
