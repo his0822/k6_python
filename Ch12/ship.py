@@ -1,13 +1,10 @@
 import pygame
 import sys
 
-pygame.init()
-screen = pygame.display.set_mode((1280,720))
-clock = pygame.time.Clock()
+import setting
+from util import init, create_bullet, handle_key_event, update_bullets, render
 
-image = pygame.image.load('./Ch12/images/ship.bmp')
-rect = image.get_rect()
-
+screen, clock, image, screen_rect, ship_rect, bullets = init()
 
 while True:
     # Process player inputs.
@@ -15,15 +12,16 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-            # raise SystemExit
+        elif event.type == pygame.KEYDOWN:
+            handle_key_event(ship_rect, bullets, event)
 
     # Do logical updates here.
-    # ...
+    new_bullets = update_bullets(screen_rect, bullets)
 
-    screen.fill("skyblue")  # Fill the display with a solid color
-    
+    screen.fill("purple")  # Fill the display with a solid color
+
     # Render the graphics here.
-    # ...
-    screen.blit(image, rect)
+    render(screen, image, ship_rect, new_bullets)
+    
     pygame.display.flip()  # Refresh on-screen display
-    clock.tick(60)         # wait until next frame (at 60 FPS)
+    clock.tick(setting.FRAME_PER_SECOND)         # wait until next frame (at 60 FPS)
