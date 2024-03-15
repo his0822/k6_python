@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
-
+# plt.plot(x,y)
+# plt.scatter(x,y)
+# plt.his(x)
 
 x = list(range(1,101))
 print(len(x))
