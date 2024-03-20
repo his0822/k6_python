@@ -3,16 +3,31 @@
 # 단, 대문자와 소문자를 구분하지 않는다.
 
 
+# word = input().upper()
+# word_list = list(set(word))
 
-M,N = map(int, input().split())
-print(M,N)
-A= [list(map(int, input.split())) for _ in range(M)] 
-B= [list(map(int, input.split())) for _ in range(N)]
+# lst = []
+# for i in word_list:
+#     count = word.count(i)
+#     lst.append(count)
+
+# if lst.count(max(lst))>= 2:
+#     print("?")
+# else:
+#     print(word_list[lst.index(max(lst))])
 
 
 
-for a,b in zip(A,B):
-    print(' '.join([str(a[i]+b[i]) for i in range(M)]))
 
-import numpy as np
-print(np.array(a)+np.array(B))
+word = input().upper()
+word_list = list(set(word))
+
+lst=[]
+for i in word_list:
+    cnum = word.count(i)
+    lst.append(cnum)
+
+if lst.count(max(lst))>=2 :
+    print("?")
+else:
+    print(word_list[lst.index(max(lst))])
